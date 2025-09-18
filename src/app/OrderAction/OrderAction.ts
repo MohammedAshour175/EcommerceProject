@@ -9,7 +9,7 @@ export async function checkoutPayment(cartId: string, shippingData: { details: s
     if (!token) {
         throw new Error('TokenErorr')
     }
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/orders/checkout-session/${cartId}?url=${process.env.NEXT_URL}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/orders/checkout-session/${cartId}?url=${process.env.NEXT_PUBLIC_URL}`, {
         method: 'post',
         body: JSON.stringify({
             "shippingAddress": shippingData
